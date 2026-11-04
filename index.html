@@ -4,146 +4,206 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VEXEL.SPACE | Soluções Corporativas Inteligentes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
-        /* Estilos Base e Reset */
-        body { 
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            color: #1e293b; 
-            background-color: #f8fafc;
-            line-height: 1.6; 
-        }
-        
-        /* Cabeçalho Corporativo */
-        header { 
-            background: #0f172a; 
-            color: #ffffff; 
-            padding: 4rem 5%; 
-            text-align: center; 
-            border-bottom: 4px solid #3b82f6;
-        }
-        header h1 { 
-            margin: 0; 
-            font-size: 3rem; 
-            letter-spacing: 2px; 
-        }
-        header p { 
-            font-size: 1.2rem; 
-            color: #94a3b8; 
-            max-width: 600px;
-            margin: 1rem auto 0;
+        :root {
+            --bg-main: #0b0f19;
+            --bg-card: #111827;
+            --text-primary: #f3f4f6;
+            --text-secondary: #9ca3af;
+            --accent: #3b82f6;
+            --accent-glow: rgba(59, 130, 246, 0.4);
+            --border-color: #1f2937;
         }
 
-        /* Estrutura Principal */
-        .container { 
-            padding: 3rem 5%; 
-            max-width: 1200px; 
-            margin: auto; 
-        }
-        .section-title { 
-            text-align: center; 
-            font-size: 2.2rem; 
-            color: #0f172a; 
-            margin-bottom: 3rem; 
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            line-height: 1.6;
+            background-image: radial-gradient(circle at top center, #1e293b 0%, #0b0f19 100%);
+            min-height: 100vh;
         }
 
-        /* Grid de Soluções */
-        .grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-            gap: 2rem; 
+        /* Cabeçalho e Logo */
+        header {
+            text-align: center;
+            padding: 6rem 5% 4rem;
+            max-width: 900px;
+            margin: 0 auto;
         }
-        .card { 
-            background: #ffffff; 
-            border: 1px solid #e2e8f0; 
-            border-radius: 8px; 
-            padding: 2rem; 
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02); 
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+        .logo {
+            max-width: 320px;
+            margin-bottom: 2.5rem;
+            animation: fadeInDown 0.8s ease-out;
         }
+
+        h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, #60a5fa, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+        }
+
+        /* Container Principal */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5% 5rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 3rem;
+            color: #ffffff;
+        }
+
+        /* Grid de Cards (UX Premium) */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 4px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0,0,0,0.05);
-        }
-        .card h3 { 
-            color: #0f172a; 
-            margin-top: 0; 
-            font-size: 1.3rem;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 0.8rem;
+            transform: translateY(-8px);
+            border-color: #374151;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px var(--accent-glow);
         }
 
-        /* Seção de Vantagens (Por que nós) */
-        .advantages {
-            background: #ffffff;
+        .card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        /* Seção Diferencial VEXEL */
+        .tech-stack {
+            margin-top: 5rem;
+            background: linear-gradient(145deg, #111827 0%, #0b0f19 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 4rem 2rem;
+            text-align: center;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        .tech-stack h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-stack p {
+            color: var(--text-secondary);
+            max-width: 750px;
+            margin: 0 auto 2.5rem;
+            font-size: 1.15rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: #ffffff;
+            padding: 1rem 2.5rem;
             border-radius: 8px;
-            padding: 3rem;
-            margin-top: 4rem;
-            text-align: center;
-            border: 1px solid #e2e8f0;
-        }
-        .advantages p {
-            font-size: 1.1rem;
-            color: #475569;
-            max-width: 800px;
-            margin: 0 auto 2rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.3s, box-shadow 0.3s;
         }
 
-        /* Botões */
-        .btn { 
-            display: inline-block; 
-            background: #3b82f6; 
-            color: #ffffff; 
-            text-decoration: none; 
-            padding: 1rem 2rem; 
-            border-radius: 6px; 
-            font-weight: 600; 
-            text-align: center;
-            transition: background 0.2s ease;
-        }
-        .btn:hover { 
-            background: #2563eb; 
+        .btn:hover {
+            background: #2563eb;
+            box-shadow: 0 0 15px var(--accent-glow);
         }
 
-        /* Rodapé */
-        footer { 
-            background: #0f172a; 
-            color: #64748b; 
-            text-align: center; 
-            padding: 2rem 5%; 
-            margin-top: 4rem; 
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>VEXEL.SPACE</h1>
-        <p>Desenvolvimento de software sob medida e automação de processos para escalar o seu negócio de forma inteligente.</p>
+        <!-- A imagem do logo está referenciada aqui. Certifique-se de que o arquivo no GitHub se chama exatamente "logo.png" -->
+        <img src="logo.png" alt="VEXEL.SPACE" class="logo">
+        <h1>Automação e Software Sob Medida.</h1>
+        <p>Sistemas inteligentes e arquitetura de redes projetados para escalar a operação do seu negócio com máxima eficiência.</p>
     </header>
 
     <div class="container">
-        <h2 class="section-title">Nossas Soluções</h2>
+        <h2 class="section-title">Soluções Validadas</h2>
         <div class="grid">
             <div class="card">
                 <h3>Motor de Aprovação de Orçamentos</h3>
-                <p>Digitalize seu fluxo financeiro. Um sistema completo para gerenciar solicitações de compras, configurar alçadas de aprovação entre setores e rastrear o histórico completo de autorizações em tempo real.</p>
+                <p>Digitalize o seu fluxo financeiro. Configure alçadas de aprovação entre setores e rastreie o histórico completo de autorizações em tempo real, eliminando gargalos.</p>
             </div>
             <div class="card">
-                <h3>Controle de Almoxarifado e Inventário</h3>
-                <p>Rastreabilidade total de estoque. Registre entradas, saídas e movimentações diárias em uma interface rápida que centraliza os dados, eliminando planilhas manuais e perdas financeiras.</p>
+                <h3>Controle de Almoxarifado</h3>
+                <p>Rastreabilidade total de estoque. Registre entradas, saídas e movimentações em uma interface de alta performance, blindando sua operação contra furos no inventário.</p>
             </div>
             <div class="card">
                 <h3>Gestão de Rotinas Operacionais</h3>
-                <p>Padronize a comunicação e o acompanhamento de tarefas da sua equipe. Nossos painéis de gestão garantem que nenhuma informação se perca na transição de turnos ou setores.</p>
+                <p>Padronize o fluxo de trabalho da sua equipe. Nossos painéis centralizam as tarefas do dia a dia, garantindo que nenhuma informação se perca na transição de turnos.</p>
             </div>
         </div>
         
-        <div class="advantages">
-            <h2 class="section-title">Tecnologia Integrada, Custo Zero de Infraestrutura</h2>
-            <p>Diferente de sistemas tradicionais que exigem servidores caros e manutenção mensal, as soluções da <strong>VEXEL.SPACE</strong> são desenvolvidas nativamente no ecossistema Google Workspace (Apps Script).</p>
-            <p>Entregamos sistemas robustos, seguros e 100% integrados às ferramentas que sua empresa já confia, eliminando completamente as mensalidades de hospedagem nas nossas aplicações padrão.</p>
-            <a href="mailto:seuemail@exemplo.com" class="btn">Solicite uma Proposta Técnica</a>
+        <div class="tech-stack">
+            <h2>Tecnologia Integrada. Zero Mensalidade de Servidor.</h2>
+            <p>Construímos aplicações nativas no ecossistema Google (Apps Script) e infraestruturas locais com altíssima disponibilidade. Entregamos sistemas robustos integrados às ferramentas que a sua empresa já utiliza, eliminando completamente os custos mensais com hospedagem de nuvem ociosa.</p>
+            <a href="mailto:contato@vexel.space" class="btn">Solicitar Diagnóstico Técnico</a>
         </div>
     </div>
 
