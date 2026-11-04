@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VEXEL.SPACE | Soluções Corporativas Inteligentes</title>
+    <style>
+        /* Estilos Base e Reset */
+        body { 
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            color: #1e293b; 
+            background-color: #f8fafc;
+            line-height: 1.6; 
+        }
+        
+        /* Cabeçalho Corporativo */
+        header { 
+            background: #0f172a; 
+            color: #ffffff; 
+            padding: 4rem 5%; 
+            text-align: center; 
+            border-bottom: 4px solid #3b82f6;
+        }
+        header h1 { 
+            margin: 0; 
+            font-size: 3rem; 
+            letter-spacing: 2px; 
+        }
+        header p { 
+            font-size: 1.2rem; 
+            color: #94a3b8; 
+            max-width: 600px;
+            margin: 1rem auto 0;
+        }
+
+        /* Estrutura Principal */
+        .container { 
+            padding: 3rem 5%; 
+            max-width: 1200px; 
+            margin: auto; 
+        }
+        .section-title { 
+            text-align: center; 
+            font-size: 2.2rem; 
+            color: #0f172a; 
+            margin-bottom: 3rem; 
+        }
+
+        /* Grid de Soluções */
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 2rem; 
+        }
+        .card { 
+            background: #ffffff; 
+            border: 1px solid #e2e8f0; 
+            border-radius: 8px; 
+            padding: 2rem; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02); 
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+        }
+        .card h3 { 
+            color: #0f172a; 
+            margin-top: 0; 
+            font-size: 1.3rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.8rem;
+        }
+
+        /* Seção de Vantagens (Por que nós) */
+        .advantages {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 3rem;
+            margin-top: 4rem;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+        .advantages p {
+            font-size: 1.1rem;
+            color: #475569;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        /* Botões */
+        .btn { 
+            display: inline-block; 
+            background: #3b82f6; 
+            color: #ffffff; 
+            text-decoration: none; 
+            padding: 1rem 2rem; 
+            border-radius: 6px; 
+            font-weight: 600; 
+            text-align: center;
+            transition: background 0.2s ease;
+        }
+        .btn:hover { 
+            background: #2563eb; 
+        }
+
+        /* Rodapé */
+        footer { 
+            background: #0f172a; 
+            color: #64748b; 
+            text-align: center; 
+            padding: 2rem 5%; 
+            margin-top: 4rem; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>VEXEL.SPACE</h1>
+        <p>Desenvolvimento de software sob medida e automação de processos para escalar o seu negócio de forma inteligente.</p>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">Nossas Soluções</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Motor de Aprovação de Orçamentos</h3>
+                <p>Digitalize seu fluxo financeiro. Um sistema completo para gerenciar solicitações de compras, configurar alçadas de aprovação entre setores e rastrear o histórico completo de autorizações em tempo real.</p>
+            </div>
+            <div class="card">
+                <h3>Controle de Almoxarifado e Inventário</h3>
+                <p>Rastreabilidade total de estoque. Registre entradas, saídas e movimentações diárias em uma interface rápida que centraliza os dados, eliminando planilhas manuais e perdas financeiras.</p>
+            </div>
+            <div class="card">
+                <h3>Gestão de Rotinas Operacionais</h3>
+                <p>Padronize a comunicação e o acompanhamento de tarefas da sua equipe. Nossos painéis de gestão garantem que nenhuma informação se perca na transição de turnos ou setores.</p>
+            </div>
+        </div>
+        
+        <div class="advantages">
+            <h2 class="section-title">Tecnologia Integrada, Custo Zero de Infraestrutura</h2>
+            <p>Diferente de sistemas tradicionais que exigem servidores caros e manutenção mensal, as soluções da <strong>VEXEL.SPACE</strong> são desenvolvidas nativamente no ecossistema Google Workspace (Apps Script).</p>
+            <p>Entregamos sistemas robustos, seguros e 100% integrados às ferramentas que sua empresa já confia, eliminando completamente as mensalidades de hospedagem nas nossas aplicações padrão.</p>
+            <a href="mailto:seuemail@exemplo.com" class="btn">Solicite uma Proposta Técnica</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 VEXEL.SPACE. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
